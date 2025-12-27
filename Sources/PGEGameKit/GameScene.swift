@@ -23,13 +23,12 @@ public var onContactEnd: (_ contact: SKPhysicsContact) -> Void = { _ in }
 /// Called when an action completes (optional helper hook)
 public var onActionComplete: () -> Void = { }
 
-public let cameraNode = SKCameraNode()
-
 // MARK: - Scene
 
 public final class GameScene: SKScene, SKSceneDelegate, SKPhysicsContactDelegate {
 
     private var hasLoaded = false
+    public let cameraNode = SKCameraNode()
 
     public override init(size: CGSize) {
         super.init(size: size)
@@ -50,7 +49,7 @@ public final class GameScene: SKScene, SKSceneDelegate, SKPhysicsContactDelegate
 
         physicsWorld.contactDelegate = self
         delegate = self
-
+        
         camera = cameraNode
         addChild(cameraNode)
     }
