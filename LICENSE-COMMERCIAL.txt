@@ -1,0 +1,21 @@
+PGEGameKit — Commercial License (Paid)
+=====================================
+
+Copyright © 2025 Satyananda Corp
+Doing business as Playground Engineer.
+All rights reserved.
+
+This file is a commercial licensing template for PGEGameKit. A signed commercial
+license agreement is required for commercial use.
+
+Commercial use includes, but is not limited to:
+- Selling a product or service that includes or depends on PGEGameKit
+- Packaging PGEGameKit in paid curriculum, courses, or learning platforms
+- Offering paid tutoring/coaching programs where PGEGameKit is a core component
+- Distributing PGEGameKit as part of a paid app, paid SDK, or paid bundle
+
+To obtain a commercial license, contact Satyananda Corp (DBA Playground Engineer)
+to request terms, fees, and a signed agreement.
+
+Until a commercial license is granted in writing, your use is limited to the
+Educational License in LICENSE-EDUCATIONAL.txt.
