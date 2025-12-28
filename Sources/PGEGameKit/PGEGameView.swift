@@ -14,6 +14,7 @@ public struct PGEGameView: View {
     public init() {}
     public var body: some View {
         GameViewControllerRepresentable()
+            .ignoresSafeArea()
     }
 }
 

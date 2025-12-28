@@ -11,6 +11,7 @@ public final class GameViewController: UIViewController {
 
     private let skView = SKView()
     private var hasPresented = false
+    private var hasInitializedScene = false
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +31,29 @@ public final class GameViewController: UIViewController {
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        // Present after we know final size.
-        if !hasPresented {
-            hasPresented = true
+        if !hasInitializedScene {
+           hasInitializedScene = true
+           setScene() // <-- ensures the shared scene exists before first present
+        }
+        
+        if skView.scene !== scene {
             scene.size = skView.bounds.size
             scene.scaleMode = .resizeFill
             skView.presentScene(scene)
         } else {
-            // Keep in sync for split-screen / rotation
             scene.size = skView.bounds.size
         }
+        
+        // Present after we know final size.
+//        if !hasPresented {
+//            hasPresented = true
+//            scene.size = skView.bounds.size
+//            scene.scaleMode = .resizeFill
+//            skView.presentScene(scene)
+//        } else {
+//            // Keep in sync for split-screen / rotation
+//            scene.size = skView.bounds.size
+//        }
     }
 
     public override var prefersStatusBarHidden: Bool { true }
