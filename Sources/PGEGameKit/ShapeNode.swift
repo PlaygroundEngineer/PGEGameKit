@@ -91,12 +91,17 @@ public class ShapeNode: SKShapeNode {
         currentTouchPoint = touches.first?.location(in: self) ?? .zero
         onTouchUp()
     }
+    private func commonInit() {
+        isUserInteractionEnabled = true
+        zPosition = 1
+    }
     public override init() {
         super.init()
-        self.zPosition = 1
+        commonInit()
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
     }
 }
 
@@ -184,11 +189,17 @@ public class SpriteNode: SKSpriteNode {
         currentTouchPoint = touches.first?.location(in: self) ?? .zero
         onTouchUp()
     }
+    private func commonInit() {
+       isUserInteractionEnabled = true   // ✅ REQUIRED
+       zPosition = 1
+    }
     public override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
+        commonInit()
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
     }
     public convenience init(image: UIImage) {
         if let cgImage = image.cgImage {
@@ -197,6 +208,7 @@ public class SpriteNode: SKSpriteNode {
         } else {
             self.init(texture: nil, color: .blue, size: CGSize(width: 100, height: 100))
         }
+        commonInit()
     }
     public convenience init(image: UIImage, size: CGSize) {
         if let cgImage = image.cgImage {
@@ -205,6 +217,7 @@ public class SpriteNode: SKSpriteNode {
         } else {
             self.init(texture: nil, color: .blue, size: CGSize(width: 100, height: 100))
         }
+        commonInit()
     }
     public convenience init(image: UIImage, color: UIColor, size: CGSize) {
         if let cgImage = image.cgImage {
@@ -213,6 +226,7 @@ public class SpriteNode: SKSpriteNode {
         } else {
             self.init(texture: nil, color: .blue, size: CGSize(width: 100, height: 100))
         }
+        commonInit()
     }
     public convenience init(gradient: [UIColor], size: CGSize) {
         let gradientLayer = CAGradientLayer()
@@ -227,6 +241,7 @@ public class SpriteNode: SKSpriteNode {
         } else {
             self.init(texture: nil, color: .blue, size: size)
         }
+        commonInit()
     }
 }
 

@@ -43,17 +43,6 @@ public final class GameViewController: UIViewController {
         } else {
             scene.size = skView.bounds.size
         }
-        
-        // Present after we know final size.
-//        if !hasPresented {
-//            hasPresented = true
-//            scene.size = skView.bounds.size
-//            scene.scaleMode = .resizeFill
-//            skView.presentScene(scene)
-//        } else {
-//            // Keep in sync for split-screen / rotation
-//            scene.size = skView.bounds.size
-//        }
     }
 
     public override var prefersStatusBarHidden: Bool { true }
